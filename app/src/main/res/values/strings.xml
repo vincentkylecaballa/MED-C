@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Med-C</string>
+    <string name="don_t_have_one">Don\'t have one?</string>
+    <string name="register">REGISTER</string>
+    <string name="password">Password</string>
+    <string name="medc_logo">MedC Logo</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="first_name">First Name</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="welcome">Welcome!</string>
+    <string name="sign_in_to_your_account">sign in to your account</string>
+    <string name="todo" />
+    <string name="button">Button</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="let_s_get_started">Let\'s Get Started!</string>
+    <string name="already_have_an_account_log_in_here">Already have an account? Log-in here</string>
+    <string name="to_get_the_full_features_of_med_c">to get the full features of Med-C</string>
+    <string name="name">Name</string>
+    <string name="hint">hint</string>
+    <string name="email_address">Email Address</string>
+    <string name="log_in">LOG IN</string>
+    <string name="log_inbtn">LOG IN</string>
+    <string name="or">OR</string>
+    <string name="sign_upbtn">SIGN UP</string>
+    <string name="loginbg">TODO</string>
+    <string name="medc">MedC</string>
+    <string name="profilePicture">TODO</string>
+
+
+</resources>
