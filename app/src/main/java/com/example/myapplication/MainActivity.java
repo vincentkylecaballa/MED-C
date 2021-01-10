@@ -1,15 +1,20 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -18,16 +23,12 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 5000;
     private Button regbutton;
     private Button loginbutton;
-    private SpeechRecognizer speechRecognizer;
-    private EditText searchBar;
-    private ImageView voiceBtn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,19 +51,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
-        != PackageManager.PERMISSION_GRANTED) {
-            checkPermission();
-        }
-
-        searchBar = findViewById(R.id.text);
-        voiceBtn = findViewById(R.id.voiceBtn);
-
-        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
-
-        final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-
     }
 
     private void register() {
@@ -75,22 +63,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void checkPermission() {
-
-    }
-
-    public void onResults(Bundle bundle) {
-        voiceBtn.setImageResource(R.drawable.ic_mic);
-        ArrayList<String> data = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-        searchBar.setText(0);
-    }
-
-    public void onBeginningOfSpeech() {
-        searchBar.setText("");
-        searchBar.setHint("Listening...");
-    }
-
-    
 
 }
 
