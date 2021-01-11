@@ -6,6 +6,7 @@ import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -16,7 +17,7 @@ import java.util.Locale;
 
 public class Homepage extends AppCompatActivity {
     private static final int REQUEST_CODE_SPEECH_INPUT = 1;
-    private ImageButton voiceAst;
+    private ImageView voiceAst;
     private EditText searchProduct;
 
     protected void onCreate(Bundle savedInstanceState) {
