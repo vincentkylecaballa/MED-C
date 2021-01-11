@@ -2,6 +2,7 @@
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -83,6 +84,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
 
+
+
         <TextView
             android:id="@+id/medcTxt"
             android:layout_width="wrap_content"
@@ -122,6 +125,7 @@
             android:layout_marginEnd="64dp"
             android:background="@android:color/white"
             android:drawableStart="@drawable/ic_search_black"
+            android:elevation="15dp"
             android:ems="10"
             android:hint="@string/search"
             android:importantForAutofill="no"
@@ -151,7 +155,26 @@
             app:srcCompat="@drawable/ic_mic" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/medImage"
+            android:layout_width="0dp"
+            android:layout_height="213dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/medPhoto"
+            android:elevation="15dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomnavbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar"
+            app:layout_constraintVertical_bias="0.056"
+            app:srcCompat="@drawable/homepageimage" />
+
+        <ImageView
+            android:id="@+id/navImage"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="8dp"
@@ -177,7 +200,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/navImage" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
