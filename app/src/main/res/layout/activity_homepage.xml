@@ -13,79 +13,6 @@
         android:layout_height="match_parent">
 
 
-        <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
-            android:id="@+id/bottomnavbar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:elevation="20dp"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            app:bnc_mode="spread"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <com.gauravk.bubblenavigation.BubbleToggleView
-                android:id="@+id/homeSection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp"
-                app:bt_active="true"
-                app:bt_colorActive="@color/colorPrimary"
-                app:bt_colorInactive="#ffd615"
-                app:bt_icon="@drawable/ic_home"
-                app:bt_shape="@drawable/transition_background_drawable"
-                app:bt_title="HOME"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cartSection"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <com.gauravk.bubblenavigation.BubbleToggleView
-                android:id="@+id/cartSection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp"
-                app:bt_colorActive="@color/colorPrimary"
-                app:bt_colorInactive="#ffd615"
-                app:bt_icon="@drawable/ic_shopping_cart"
-                app:bt_shape="@drawable/transition_background_drawable"
-                app:bt_title="CART"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/shippingSection"
-                app:layout_constraintStart_toEndOf="@+id/homeSection"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <com.gauravk.bubblenavigation.BubbleToggleView
-                android:id="@+id/shippingSection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp"
-                app:bt_colorActive="@color/colorPrimary"
-                app:bt_colorInactive="#ffd615"
-                app:bt_icon="@drawable/ic_airport_shuttle"
-                app:bt_shape="@drawable/transition_background_drawable"
-                app:bt_title="SHIPPING"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cartSection"
-                app:layout_constraintTop_toTopOf="parent" />
-        </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
-
-
-
         <TextView
             android:id="@+id/medcTxt"
             android:layout_width="wrap_content"
@@ -165,13 +92,13 @@
             android:contentDescription="@string/medPhoto"
             android:elevation="15dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/homepage_image"
             app:layout_constraintBottom_toBottomOf="@+id/bottomnavbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchBar"
-            app:layout_constraintVertical_bias="0.056"
-            app:srcCompat="@drawable/homepageimage" />
+            app:layout_constraintVertical_bias="0.056" />
 
         <ImageView
             android:id="@+id/navImage"
@@ -201,6 +128,100 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/navImage" />
+
+        <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
+            android:id="@+id/bottomnavbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="20dp"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:bnc_mode="spread"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/homeSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                app:bt_active="true"
+                app:bt_colorActive="@color/colorPrimary"
+                app:bt_colorInactive="#ffd615"
+                app:bt_icon="@drawable/ic_home"
+                app:bt_shape="@drawable/transition_background_drawable"
+                app:bt_title="HOME"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cartSection"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/cartSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                app:bt_colorActive="@color/colorPrimary"
+                app:bt_colorInactive="#ffd615"
+                app:bt_icon="@drawable/ic_shopping_cart"
+                app:bt_shape="@drawable/transition_background_drawable"
+                app:bt_title="CART"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/shippingSection"
+                app:layout_constraintStart_toEndOf="@+id/homeSection"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/shippingSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                app:bt_colorActive="@color/colorPrimary"
+                app:bt_colorInactive="#ffd615"
+                app:bt_icon="@drawable/ic_airport_shuttle"
+                app:bt_shape="@drawable/transition_background_drawable"
+                app:bt_title="SHIPPING"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cartSection"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+
+        <TextView
+            android:id="@+id/viewedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/opensans_bold"
+            android:text="@string/most_viewed_products"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medImage" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="395dp"
+            android:layout_height="184dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="487dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
