@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -19,6 +20,7 @@ public class Homepage extends AppCompatActivity {
     private static final int REQUEST_CODE_SPEECH_INPUT = 1;
     private ImageView voiceAst;
     private EditText searchProduct;
+    private RecyclerView rView;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,8 @@ public class Homepage extends AppCompatActivity {
                 speak();
             }
         });
+
+        rView = findViewById(R.id.productsView);
 
     }
 
