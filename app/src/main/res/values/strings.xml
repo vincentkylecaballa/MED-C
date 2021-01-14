@@ -33,6 +33,11 @@
     <string name="medImage">TODO</string>
     <string name="medPhoto">TODO</string>
     <string name="most_viewed_products">Most Viewed Products</string>
+    <string name="comes_with_individual_box_packaging_plastic_film_for_the_acetate_is_included_to_prevent_scratches">Comes with individual box packaging. Plastic film for the acetate is included to prevent scratches.</string>
+    <string name="heng_de_face_shield">Heng De Face Shield</string>
+    <string name="buy">BUY</string>
+    <string name="addcart">addCart</string>
+    <string name="face_shield">face shield</string>
 
 
 </resources>
