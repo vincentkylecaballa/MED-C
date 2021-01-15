@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -12,6 +13,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.Adapter;
+
+import com.example.myapplication.HelperClasses.HomeAdapter.FeaturedAdapter;
+import com.example.myapplication.HelperClasses.HomeAdapter.FeaturedHelper;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -22,10 +27,14 @@ public class Homepage extends AppCompatActivity {
     private static final int REQUEST_CODE_SPEECH_INPUT = 1;
     private ImageView voiceAst;
     private EditText searchProduct;
-    private RecyclerView rView;
     private CircleImageView profilePic;
-    private RecyclerView ProductsView;
+    RecyclerView ProductsView;
+    RecyclerView.Adapter adapter;
 
+    public Homepage() {
+    }
+
+    @SuppressLint("CutPasteId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
@@ -40,18 +49,31 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
-        rView = findViewById(R.id.productsView);
-
         ProductsView = findViewById(R.id.productsView);
 
         ProductsView();
-
     }
 
     private void ProductsView() {
 
         ProductsView.setHasFixedSize(true);
         ProductsView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+
+        ArrayList<FeaturedHelper> featuredLocation = new ArrayList<>();
+
+        featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
+                "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
+                "included to prevent scratches. ", "₱10.00"));
+        featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
+                "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
+                "included to prevent scratches. ", "₱10.00"));
+        featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
+                "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
+                "included to prevent scratches. ", "₱10.00"));
+
+        adapter = new FeaturedAdapter(featuredLocation);
+        ProductsView.setAdapter(adapter);
+
     }
 
     private void speak() {

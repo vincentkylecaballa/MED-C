@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:orientation="vertical"
     android:background="#f5f5f5">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/medcTxt"
@@ -80,11 +81,11 @@
 
         <ImageView
             android:id="@+id/medImage"
-            android:layout_width="0dp"
-            android:layout_height="213dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="377dp"
+            android:layout_height="190dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/medPhoto"
             android:elevation="15dp"
@@ -92,10 +93,10 @@
             android:src="@drawable/homepage_image"
             app:layout_constraintBottom_toBottomOf="@+id/bottomnavbar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.388"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchBar"
-            app:layout_constraintVertical_bias="0.056" />
+            app:layout_constraintVertical_bias="0.057" />
 
         <ImageView
             android:id="@+id/navImage"
@@ -216,16 +217,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/productsView"
-            android:layout_width="381dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_height="161dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewedTxt" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+</ScrollView>
