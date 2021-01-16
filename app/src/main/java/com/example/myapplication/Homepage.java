@@ -13,10 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.Adapter;
 
-import com.example.myapplication.HelperClasses.HomeAdapter.FeaturedAdapter;
-import com.example.myapplication.HelperClasses.HomeAdapter.FeaturedHelper;
+import com.example.myapplication.helperClasses.homeAdapter.FeaturedAdapter;
+import com.example.myapplication.helperClasses.homeAdapter.FeaturedHelper;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -25,7 +24,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Homepage extends AppCompatActivity {
     private static final int REQUEST_CODE_SPEECH_INPUT = 1;
-    private ImageView voiceAst;
     private EditText searchProduct;
     private CircleImageView profilePic;
     RecyclerView ProductsView;
@@ -40,7 +38,7 @@ public class Homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
 
         searchProduct = findViewById(R.id.searchBar);
-        voiceAst = findViewById(R.id.micButton);
+        ImageView voiceAst = findViewById(R.id.micButton);
 
         voiceAst.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +55,7 @@ public class Homepage extends AppCompatActivity {
     private void ProductsView() {
 
         ProductsView.setHasFixedSize(true);
-        ProductsView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+        ProductsView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<FeaturedHelper> featuredLocation = new ArrayList<>();
 
