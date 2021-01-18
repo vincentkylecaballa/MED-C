@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="370dp"
-    android:layout_height="150dp"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="30dp"
-    app:cardCornerRadius="10dp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:clickable="true"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
 
         <ImageView
             android:id="@+id/productsImg"
-            android:layout_width="130dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/hengde_faceshield2"
-            android:contentDescription="@string/face_shield" />
+            android:layout_width="113dp"
+            android:layout_height="116dp"
+            android:contentDescription="@string/face_shield"
+            android:src="@drawable/hengde_faceshield2" />
 
         <TextView
             android:id="@+id/descTxt"
-            android:layout_width="217dp"
-            android:layout_height="68dp"
+            android:layout_width="218dp"
+            android:layout_height="60dp"
             android:layout_below="@+id/titleTxt"
             android:layout_toEndOf="@+id/productsImg"
             android:fontFamily="@font/open_sans_light"
@@ -59,8 +60,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@id/titleTxt"
-            app:srcCompat="@drawable/ic_baseline_add_shopping_cart"
-            android:contentDescription="@string/addcart" />
+            android:contentDescription="@string/addcart"
+            app:srcCompat="@drawable/ic_baseline_add_shopping_cart" />
 
         <Button
             android:id="@+id/buyBtn"
@@ -90,4 +91,4 @@
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

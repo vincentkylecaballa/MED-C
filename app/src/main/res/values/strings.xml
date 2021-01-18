@@ -45,6 +45,9 @@
     <string name="cyrus_rj_robles">Cyrus RJ Robles</string>
     <string name="open_navigation_drawer">Open</string>
     <string name="close_navigation_drawer">Close</string>
+    <string name="home">HOME</string>
+    <string name="shipping">SHIPPING</string>
+    <string name="cart">CART</string>
 
 
 </resources>

@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.helperClasses.homeAdapter.FeaturedAdapter;
 import com.example.myapplication.helperClasses.homeAdapter.FeaturedHelper;
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class Homepage extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     private ImageView menu;
     private DrawerLayout drawerLayout;
+    private BottomAppBar bottomAppBar;
 
     @SuppressLint("CutPasteId")
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,23 +58,28 @@ public class Homepage extends AppCompatActivity {
 
         menu = findViewById(R.id.navImage);
         drawerLayout = findViewById(R.id.drawer_layout);
+        navigationMenu();
 
+    }
+
+    private void navigationMenu() {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawerLayout.openDrawer(GravityCompat.START);
+                if(!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                } else {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                }
             }
         });
-
-
-
-
     }
+
 
     private void ProductsView() {
 
         ProductsView.setHasFixedSize(true);
-        ProductsView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        ProductsView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         ArrayList<FeaturedHelper> featuredLocation = new ArrayList<>();
 
@@ -112,14 +119,15 @@ public class Homepage extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        switch (requestCode) {
-            case REQUEST_CODE_SPEECH_INPUT: {
+        try {
+            if (requestCode == REQUEST_CODE_SPEECH_INPUT) {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     searchProduct.setText(result.get(0));
                 }
-                break;
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
