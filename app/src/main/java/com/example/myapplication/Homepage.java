@@ -8,14 +8,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.helperClasses.homeAdapter.FeaturedAdapter;
 import com.example.myapplication.helperClasses.homeAdapter.FeaturedHelper;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -28,9 +33,8 @@ public class Homepage extends AppCompatActivity {
     private CircleImageView profilePic;
     RecyclerView ProductsView;
     RecyclerView.Adapter adapter;
-
-    public Homepage() {
-    }
+    private ImageView menu;
+    private DrawerLayout drawerLayout;
 
     @SuppressLint("CutPasteId")
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +52,21 @@ public class Homepage extends AppCompatActivity {
         });
 
         ProductsView = findViewById(R.id.productsView);
-
         ProductsView();
+
+        menu = findViewById(R.id.navImage);
+        drawerLayout = findViewById(R.id.drawer_layout);
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+
+
+
     }
 
     private void ProductsView() {
