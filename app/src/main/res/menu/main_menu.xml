@@ -5,13 +5,18 @@
 
         <item
             android:id="@+id/medicine"
-            android:title="@string/medicine"
+            android:title="@string/vitamins"
             android:icon="@drawable/ic_medicine"/>
 
         <item
             android:id="@+id/surgical_equipments"
             android:title="@string/surgical_equipments"
             android:icon="@drawable/ic_injection"/>
+
+        <item
+            android:id="@+id/syrup"
+            android:title="@string/syrup"
+            android:icon="@drawable/ic_syrup"/>
 
     </group>
 

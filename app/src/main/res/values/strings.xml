@@ -10,7 +10,6 @@
     <string name="username">Username</string>
     <string name="welcome">Welcome!</string>
     <string name="sign_in_to_your_account">sign in to your account</string>
-    <string name="todo" />
     <string name="button">Button</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="let_s_get_started">Let\'s Get Started!</string>
@@ -41,13 +40,14 @@
     <string name="_10_00">₱10.00</string>
     <string name="string_10_00" />
     <string name="surgical_equipments">Surgical Equipments</string>
-    <string name="medicine">Medicine</string>
+    <string name="vitamins">Vitamins</string>
     <string name="customer_name">Vincent Kyle Caballa</string>
     <string name="open_navigation_drawer">Open</string>
     <string name="close_navigation_drawer">Close</string>
     <string name="home">HOME</string>
     <string name="shipping">SHIPPING</string>
     <string name="cart">CART</string>
+    <string name="syrup">Syrup</string>
 
 
 </resources>
