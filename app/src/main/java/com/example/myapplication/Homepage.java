@@ -72,10 +72,13 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
             int itemId = menuItem.getItemId();
             if (itemId == R.id.home) {
                 startActivity(new Intent(this, Homepage.class));
+                overridePendingTransition(0, 0);
             } else if (itemId == R.id.addtoCart) {
                 startActivity(new Intent(this, AddToCart.class));
+                overridePendingTransition(0, 0);
             } else if (itemId == R.id.shipping) {
                 startActivity(new Intent(this, Shipping.class));
+                overridePendingTransition(0, 0);
             }
             finish();
         }, 300);
