@@ -46,8 +46,8 @@
 
             <ImageView
                 android:id="@+id/navImage"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="8dp"
@@ -74,16 +74,16 @@
                 android:id="@+id/micButton"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_below="@id/circlePhoto"
-                android:layout_alignStart="@id/searchBar"
-                android:layout_marginStart="336dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="143dp"
+                android:paddingEnd="10dp"
+                android:layout_alignEnd="@id/searchBar"
                 android:contentDescription="@string/micButton"
+                android:elevation="10dp"
                 app:srcCompat="@drawable/ic_mic" />
 
             <EditText
                 android:id="@+id/searchBar"
-                android:layout_width="320dp"
+                android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_below="@+id/medcTxt"
                 android:layout_marginStart="20dp"
@@ -139,14 +139,19 @@
     </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_bar"
+            app:itemTextColor="#FFFFFF"
+            app:itemIconTint="#FFFFFF"
+            android:elevation="9dp"
             android:background="@drawable/bottomnavbar_shadow"/>
 
     </LinearLayout>

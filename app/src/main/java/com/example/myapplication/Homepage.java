@@ -4,31 +4,31 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.helperClasses.homeAdapter.FeaturedAdapter;
 import com.example.myapplication.helperClasses.homeAdapter.FeaturedHelper;
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Homepage extends AppCompatActivity {
+public class Homepage extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private static final int REQUEST_CODE_SPEECH_INPUT = 1;
     private EditText searchProduct;
     private CircleImageView profilePic;
@@ -36,7 +36,7 @@ public class Homepage extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     private ImageView menu;
     private DrawerLayout drawerLayout;
-    private BottomAppBar bottomAppBar;
+    private BottomNavigationView bottomNavigationView;
 
     @SuppressLint("CutPasteId")
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +60,33 @@ public class Homepage extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationMenu();
 
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull final MenuItem menuItem) {
+        bottomNavigationView.postDelayed(() -> {
+            int itemId = menuItem.getItemId();
+            if (itemId == R.id.home) {
+                startActivity(new Intent(this, Homepage.class));
+            } else if (itemId == R.id.addtoCart) {
+                startActivity(new Intent(this, AddToCart.class));
+            } else if (itemId == R.id.shipping) {
+                startActivity(new Intent(this, Shipping.class));
+            }
+            finish();
+        }, 300);
+        return true;
     }
 
     private void navigationMenu() {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.openDrawer(GravityCompat.START);
                 } else {
                     drawerLayout.closeDrawer(GravityCompat.START);
@@ -130,4 +150,6 @@ public class Homepage extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+
 }

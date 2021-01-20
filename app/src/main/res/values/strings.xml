@@ -42,12 +42,13 @@
     <string name="surgical_equipments">Surgical Equipments</string>
     <string name="vitamins">Vitamins</string>
     <string name="customer_name">Vincent Kyle Caballa</string>
-    <string name="open_navigation_drawer">Open</string>
-    <string name="close_navigation_drawer">Close</string>
     <string name="home">HOME</string>
     <string name="shipping">SHIPPING</string>
     <string name="cart">CART</string>
     <string name="syrup">Syrup</string>
+    <string name="medc_logofinal">medc_logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
