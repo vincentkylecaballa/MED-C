@@ -110,7 +110,7 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
                 "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
                 "included to prevent scratches. ", "₱10.00"));
         featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
-                "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
+                "Indoplas Face Mask", "Comes with individual box packaging. Plastic film for the acetate is " +
                 "included to prevent scratches. ", "₱10.00"));
         featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
                 "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +

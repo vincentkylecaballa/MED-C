@@ -6,23 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f5f5f5"
-    android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:openDrawer="start">
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_menu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="start"
         app:headerLayout="@layout/menu_header"
-        app:menu="@menu/main_menu"
-        android:layout_gravity="start"/>
+        app:menu="@menu/main_menu" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:clipToPadding="false">
+        android:clipToPadding="false"
+        android:fillViewport="true">
 
         <RelativeLayout
             android:id="@+id/linearLayout"
@@ -30,53 +31,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/medcTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="103dp"
-                android:layout_marginTop="48dp"
-                android:layout_toEndOf="@+id/navImage"
-                android:fontFamily="@font/opensans_bold"
-                android:gravity="center"
-                android:text="@string/medc"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25sp" />
-
-            <ImageView
-                android:id="@+id/navImage"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="8dp"
-                android:contentDescription="@string/navigationMenu"
-                android:minHeight="?attr/actionBarSize"
-                android:src="@drawable/ic_menu"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circlePhoto"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="101dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="43dp"
-                android:layout_marginBottom="55dp"
-                android:layout_toEndOf="@id/medcTxt"
-                android:src="@color/colorAccent"
-                app:layout_constraintStart_toEndOf="@+id/medcTxt" />
 
             <ImageView
                 android:id="@+id/micButton"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="143dp"
-                android:paddingEnd="10dp"
                 android:layout_alignEnd="@id/searchBar"
+                android:layout_marginTop="110dp"
+                android:layout_marginEnd="10dp"
                 android:contentDescription="@string/micButton"
                 android:elevation="10dp"
                 app:srcCompat="@drawable/ic_mic" />
@@ -85,9 +47,9 @@
                 android:id="@+id/searchBar"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_below="@+id/medcTxt"
+                android:layout_below="@+id/home_toolbar"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="20dp"
                 android:background="@android:color/white"
                 android:drawableStart="@drawable/ic_search_black"
@@ -116,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/medImage"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/opensans_bold"
@@ -129,12 +91,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/viewedTxt"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
                 android:orientation="vertical"
-                android:scrollbars="vertical"/>
+                android:scrollbars="vertical" />
 
+            <include layout="@layout/navigation_menu"/>
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -148,11 +111,11 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_gravity="bottom"
-            app:menu="@menu/bottom_bar"
-            app:itemTextColor="#FFFFFF"
-            app:itemIconTint="#FFFFFF"
+            android:background="@drawable/bottomnavbar_shadow"
             android:elevation="9dp"
-            android:background="@drawable/bottomnavbar_shadow"/>
+            app:itemIconTint="#FFFFFF"
+            app:itemTextColor="#FFFFFF"
+            app:menu="@menu/bottom_bar" />
 
     </LinearLayout>
 

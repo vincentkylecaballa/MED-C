@@ -34,6 +34,8 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Adapte
     public void onBindViewHolder(@NonNull AdapterViewHolder holder, int position) {
         FeaturedHelper featuredHelper = featuredLocations.get(position);
 
+
+        //holder
         holder.image.setImageResource(featuredHelper.getImg());
         holder.description.setText(featuredHelper.getDesc());
         holder.title.setText(featuredHelper.getTitle());
