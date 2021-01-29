@@ -9,17 +9,80 @@
     android:orientation="vertical"
     tools:openDrawer="start">
 
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_menu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/menu_header"
+        app:elevation="10dp"
+        app:headerLayout="@navigation/menu_header"
         app:menu="@menu/main_menu" />
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <include layout="@navigation/navigation_menu" />
+
+            <TextView
+                android:id="@+id/shippingTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/rectangleLayout"
+                android:layout_marginTop="85dp"
+                android:elevation="12dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@string/shipping_text"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/rectangleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:layout_above="@id/navigation_menu"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="150dp"
+                android:contentDescription="@string/shipping_layout_shape"
+                android:elevation="5dp"
+                android:src="@drawable/shipping_layout_shape" />
+
+            <ImageView
+                android:id="@+id/shippingImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignStart="@id/rectangleLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:elevation="12dp"
+                app:srcCompat="@drawable/ic_shipping" />
+
+            <ImageView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="12dp"
+                app:srcCompat="@drawable/shipping_rectangle" />
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/shipping_navigation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"

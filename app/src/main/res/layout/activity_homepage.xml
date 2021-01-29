@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/menu_header"
+        app:headerLayout="@navigation/menu_header"
         app:menu="@menu/main_menu" />
 
     <androidx.core.widget.NestedScrollView
@@ -97,7 +97,7 @@
                 android:orientation="vertical"
                 android:scrollbars="vertical" />
 
-            <include layout="@layout/navigation_menu"/>
+            <include layout="@navigation/navigation_menu"/>
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
