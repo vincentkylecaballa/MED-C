@@ -53,6 +53,14 @@
     <string name="shipping_text">Shipping</string>
     <string name="shipping_image">TODO</string>
     <string name="line">TODO</string>
+    <string name="location_image">TODO</string>
+    <string name="money_image">TODO</string>
+    <string name="background_stroke">TODO</string>
+    <string name="call_image">TODO</string>
+    <string name="emailImg">TODO</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="applied_voucher">Applied Voucher</string>
+    <string name="total_amount">Total Amount</string>
 
 
 </resources>
