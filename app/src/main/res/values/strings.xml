@@ -51,6 +51,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="shipping_layout_shape">shipping_layout_shape</string>
     <string name="shipping_text">Shipping</string>
+    <string name="shipping_image">TODO</string>
+    <string name="line">TODO</string>
 
 
 </resources>
