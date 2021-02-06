@@ -1,5 +1,6 @@
 package com.example.myapplication.helperClasses.homeAdapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.Homepage;
 import com.example.myapplication.R;
+import com.example.myapplication.Shipping;
 
 import java.util.ArrayList;
 
@@ -48,7 +51,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Adapte
         return featuredLocations.size();
     }
 
-    public static class AdapterViewHolder extends RecyclerView.ViewHolder {
+    public class AdapterViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image, addtocart;
         TextView title, description, price;
@@ -65,6 +68,8 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Adapte
             description = itemView.findViewById(R.id.descTxt);
             addtocart = itemView.findViewById(R.id.addtoCart);
             buy = itemView.findViewById(R.id.buyBtn);
+
+
         }
     }
 }

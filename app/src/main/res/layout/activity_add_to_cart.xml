@@ -40,7 +40,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="90dp"
             android:elevation="12dp"
-            app:srcCompat="@drawable/ic_shopping_bag" />
+            app:srcCompat="@drawable/ic_shopping_bag"
+            android:contentDescription="@string/shopping_bag" />
 
         <TextView
             android:id="@+id/orderTxt"
@@ -51,7 +52,7 @@
             android:layout_marginEnd="-80dp"
             android:elevation="12dp"
             android:fontFamily="@font/opensans_bold"
-            android:text="Order"
+            android:text="@string/order"
             android:textColor="@android:color/black"
             android:textSize="24sp" />
 

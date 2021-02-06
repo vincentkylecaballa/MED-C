@@ -38,6 +38,7 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
     private DrawerLayout drawerLayout;
     private BottomNavigationView bottomNavigationView;
 
+
     @SuppressLint("CutPasteId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +64,8 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+
 
     }
 

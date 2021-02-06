@@ -61,6 +61,8 @@
     <string name="payment_method">Payment Method</string>
     <string name="applied_voucher">Applied Voucher</string>
     <string name="total_amount">Total Amount</string>
+    <string name="shopping_bag">TODO</string>
+    <string name="order">Order</string>
 
 
 </resources>
