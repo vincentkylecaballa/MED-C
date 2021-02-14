@@ -93,7 +93,7 @@
         android:layout_width="60dp"
         android:layout_height="30dp"
         android:ems="10"
-        android:background="@drawable/quanity_text_stroke"
+        android:background="@drawable/quantity_text_stroke"
         android:layout_marginStart="60dp"
         android:layout_marginTop="710dp"
         android:inputType="number"
