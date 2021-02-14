@@ -142,8 +142,8 @@
 
     <ImageView
         android:id="@+id/loginbg"
-        android:layout_width="410dp"
-        android:layout_height="239dp"
+        android:layout_width="430dp"
+        android:layout_height="236dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"

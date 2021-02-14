@@ -63,6 +63,10 @@
     <string name="total_amount">Total Amount</string>
     <string name="shopping_bag">TODO</string>
     <string name="order">Order</string>
+    <string name="quantity">Quantity</string>
+    <string name="fulfilled_by_med_c">Fulfilled by MED-C</string>
+    <string name="description">Description</string>
+    <string name="heart_image">heart_image</string>
 
 
 </resources>
