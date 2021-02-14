@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical"
+    tools:context=".product_details">
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="700dp"
+        android:layout_marginStart="170dp"
+        android:textColor="#FFFFFF"
+        android:text="BUY" />
+
+    <ImageView
+        android:id="@+id/productDetailsBg"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:srcCompat="@drawable/product_details_stroke" />
+
+    <TextView
+        android:id="@+id/productTitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="270dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/fulfilledTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fulfilled_by_med_c"
+        android:fontFamily="@font/open_sans_light"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="310dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_bold"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="470dp"
+        android:text="@string/description"/>
+
+    <ImageView
+        android:id="@+id/heartImg"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginStart="350dp"
+        app:srcCompat="@drawable/ic_heart"
+        android:contentDescription="@string/heart_image" />
+
+</RelativeLayout>
