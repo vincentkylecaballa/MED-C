@@ -16,17 +16,15 @@
         android:layout_alignParentStart="true"
         android:background="@drawable/button_background"
         android:layout_marginTop="700dp"
-        android:layout_marginStart="170dp"
+        android:layout_marginStart="190dp"
         android:textColor="#FFFFFF"
-        android:text="BUY" />
+        android:text="@string/buy" />
 
     <ImageView
         android:id="@+id/productDetailsBg"
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:layout_marginTop="250dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         app:srcCompat="@drawable/product_details_stroke" />
 
     <TextView
@@ -35,8 +33,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/opensans_bold"
         android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:layout_marginStart="40dp"
+        android:textSize="20sp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="270dp"
         android:text="TextView" />
 
@@ -46,27 +44,79 @@
         android:layout_height="wrap_content"
         android:text="@string/fulfilled_by_med_c"
         android:fontFamily="@font/open_sans_light"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="310dp"
         android:textColor="@android:color/black"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <TextView
+        android:id="@+id/productDescriptionTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/opensans_bold"
         android:textColor="@android:color/black"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="470dp"
-        android:text="@string/description"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="350dp"
+        android:text="@string/description" />
 
     <ImageView
         android:id="@+id/heartImg"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="275dp"
-        android:layout_marginStart="350dp"
+        android:layout_marginStart="360dp"
         app:srcCompat="@drawable/ic_heart"
         android:contentDescription="@string/heart_image" />
+
+    <ImageView
+        android:id="@+id/plusImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="710dp"
+        app:srcCompat="@drawable/plus_icon"
+        android:clickable="true"
+        android:contentDescription="@string/plus_button" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="710dp"
+        android:layout_marginStart="20dp"
+        app:srcCompat="@drawable/minus_icon"
+        android:clickable="true"
+        android:contentDescription="@string/minus_button" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:background="@drawable/quanity_text_stroke"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="710dp"
+        android:inputType="number"
+        android:importantForAutofill="no" />
+
+    <RatingBar
+        android:id="@+id/productRating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/productTitleTxt"
+        android:layout_marginTop="275dp"
+        android:layout_marginStart="20dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:stepSize="0.1" />
+
+    <ImageView
+        android:id="@+id/deliveryImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="305dp"
+        android:layout_marginStart="30dp"
+        app:srcCompat="@drawable/ic_delivery" />
 
 </RelativeLayout>

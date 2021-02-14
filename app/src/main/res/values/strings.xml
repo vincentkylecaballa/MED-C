@@ -34,7 +34,7 @@
     <string name="most_viewed_products">Most Viewed Products</string>
     <string name="comes_with_individual_box_packaging_plastic_film_for_the_acetate_is_included_to_prevent_scratches">Comes with individual box packaging. Plastic film for the acetate is included to prevent scratches.</string>
     <string name="heng_de_face_shield">Heng De Face Shield</string>
-    <string name="buy">BUY</string>
+    <string name="buy_button">BUY</string>
     <string name="addcart">addCart</string>
     <string name="face_shield">face shield</string>
     <string name="_10_00">₱10.00</string>
@@ -67,6 +67,9 @@
     <string name="fulfilled_by_med_c">Fulfilled by MED-C</string>
     <string name="description">Description</string>
     <string name="heart_image">heart_image</string>
+    <string name="buy">BUY</string>
+    <string name="minus_button">minus_button</string>
+    <string name="plus_button">plus button</string>
 
 
 </resources>
