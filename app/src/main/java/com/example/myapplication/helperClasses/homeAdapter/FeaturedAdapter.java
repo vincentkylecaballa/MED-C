@@ -11,9 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Homepage;
 import com.example.myapplication.R;
-import com.example.myapplication.Shipping;
+
 
 import java.util.ArrayList;
 
@@ -21,10 +20,13 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Adapte
     
     ArrayList<FeaturedHelper> featuredLocations;
 
-    public FeaturedAdapter(ArrayList<FeaturedHelper> featuredLocations) {
-        this.featuredLocations = featuredLocations;
-    }
+    RecyclerViewClickListener listener;
 
+
+    public FeaturedAdapter(ArrayList<FeaturedHelper> featuredLocations, RecyclerViewClickListener listener) {
+        this.featuredLocations = featuredLocations;
+        this.listener = listener;
+    }
     @NonNull
     @Override
     public AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -51,7 +53,11 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Adapte
         return featuredLocations.size();
     }
 
-    public class AdapterViewHolder extends RecyclerView.ViewHolder {
+    public interface RecyclerViewClickListener{
+        void onClick(View v,int position);
+    }
+
+    public class AdapterViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
 
         ImageView image, addtocart;
         TextView title, description, price;
@@ -69,7 +75,12 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Adapte
             addtocart = itemView.findViewById(R.id.addtoCart);
             buy = itemView.findViewById(R.id.buyBtn);
 
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            listener.onClick(itemView, getAdapterPosition());
         }
     }
 }

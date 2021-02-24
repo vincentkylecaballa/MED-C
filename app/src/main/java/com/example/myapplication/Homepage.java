@@ -34,16 +34,17 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
     private CircleImageView profilePic;
     RecyclerView ProductsView;
     RecyclerView.Adapter adapter;
+    ArrayList<FeaturedHelper> featuredLocation;
     private ImageView menu;
     private DrawerLayout drawerLayout;
     private BottomNavigationView bottomNavigationView;
-
+    private FeaturedAdapter.RecyclerViewClickListener listener;
 
     @SuppressLint("CutPasteId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-
+        featuredLocation = new ArrayList<>();
         searchProduct = findViewById(R.id.searchBar);
         ImageView voiceAst = findViewById(R.id.micButton);
 
@@ -107,7 +108,7 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
         ProductsView.setHasFixedSize(true);
         ProductsView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        ArrayList<FeaturedHelper> featuredLocation = new ArrayList<>();
+
 
         featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
                 "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
@@ -119,9 +120,21 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
                 "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
                 "included to prevent scratches. ", "₱10.00"));
 
-        adapter = new FeaturedAdapter(featuredLocation);
+        adapter = new FeaturedAdapter(featuredLocation,listener);
+        setOnClickListener();
         ProductsView.setAdapter(adapter);
 
+    }
+
+    private void setOnClickListener() {
+        listener = new FeaturedAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent intent =new Intent(Homepage.this, product_details.class);
+                intent.putExtra("ProductName",featuredLocation.get(position).getTitle());
+                startActivity(intent);
+            }
+        };
     }
 
     private void speak() {
