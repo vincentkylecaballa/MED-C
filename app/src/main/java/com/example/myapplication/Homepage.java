@@ -114,10 +114,10 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
                 "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
                 "included to prevent scratches. ", "₱10.00"));
         featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
-                "Indoplas Face Mask", "Comes with individual box packaging. Plastic film for the acetate is " +
+                "Indoplas Face Mask", "Check 1 " +
                 "included to prevent scratches. ", "₱10.00"));
         featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
-                "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
+                "Heng De Face Shield", "Check 2 " +
                 "included to prevent scratches. ", "₱10.00"));
 
         adapter = new FeaturedAdapter(featuredLocation,listener);
@@ -131,7 +131,10 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
             @Override
             public void onClick(View v, int position) {
                 Intent intent =new Intent(Homepage.this, product_details.class);
-                intent.putExtra("ProductName",featuredLocation.get(position).getTitle());
+                intent.putExtra("productPic", featuredLocation.get(position).getImg());
+                intent.putExtra("productName",featuredLocation.get(position).getTitle());
+                intent.putExtra("description", featuredLocation.get(position).getDesc());
+                intent.putExtra("productPrice", featuredLocation.get(position).getPrice());
                 startActivity(intent);
             }
         };

@@ -10,7 +10,7 @@
 
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnProdDesBuy"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -27,8 +27,16 @@
         android:layout_marginTop="250dp"
         app:srcCompat="@drawable/product_details_stroke" />
 
+    <ImageView
+        android:id="@+id/ivProductPic"
+        android:layout_width="320dp"
+        android:layout_height="259dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="49dp"
+        app:srcCompat="@drawable/hengde_faceshield2" />
+
     <TextView
-        android:id="@+id/productTitleTxt"
+        android:id="@+id/tvProdName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/opensans_bold"
@@ -50,14 +58,36 @@
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/productDescriptionTxt"
+        android:id="@+id/tvProdDesTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/opensans_bold"
-        android:textColor="@android:color/black"
         android:layout_marginStart="30dp"
         android:layout_marginTop="350dp"
-        android:text="@string/description" />
+        android:fontFamily="@font/opensans_bold"
+        android:text="@string/description"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/tvProdPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="350dp"
+        android:layout_toEndOf="@+id/tvProdDesTxt"
+        android:fontFamily="@font/open_sans_light"
+        android:text="₱00.00"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tvProdDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="375dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/description"
+        android:textSize="11dp"
+        android:textColor="@android:color/black" />
 
     <ImageView
         android:id="@+id/heartImg"
@@ -69,7 +99,7 @@
         android:contentDescription="@string/heart_image" />
 
     <ImageView
-        android:id="@+id/plusImg"
+        android:id="@+id/ivPlus"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="130dp"
@@ -79,7 +109,7 @@
         android:contentDescription="@string/plus_button" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/ivMinus"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="710dp"
@@ -89,22 +119,29 @@
         android:contentDescription="@string/minus_button" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/etProdQuan"
         android:layout_width="60dp"
         android:layout_height="30dp"
-        android:ems="10"
-        android:background="@drawable/quantity_text_stroke"
         android:layout_marginStart="60dp"
         android:layout_marginTop="710dp"
+        android:background="@drawable/quantity_text_stroke"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:fontFamily="@font/opensans_bold"
+        android:gravity="center_horizontal|fill_vertical"
+        android:importantForAutofill="no"
         android:inputType="number"
-        android:importantForAutofill="no" />
+        android:text="1"
+        android:textAlignment="gravity"
+        android:textStyle="bold" />
 
     <RatingBar
         android:id="@+id/productRating"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/productTitleTxt"
+        android:layout_toEndOf="@id/tvProdName"
         android:layout_marginTop="275dp"
         android:layout_marginStart="20dp"
         android:isIndicator="true"
