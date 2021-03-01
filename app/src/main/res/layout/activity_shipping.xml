@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,188 +7,239 @@
     android:background="#f5f5f5"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:openDrawer="start">
+    tools:context=".Shipping">
 
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="686dp"
+        android:layout_marginEnd="38dp"
+        android:background="@drawable/button_background"
+        android:elevation="12dp"
+        android:text="@string/proceed"
+        android:textColor="@android:color/white" />
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_menu"
+    <TextView
+        android:id="@+id/shippingTxt"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:elevation="10dp"
-        app:headerLayout="@navigation/menu_header"
-        app:menu="@menu/main_menu" />
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignTop="@+id/rectangleLayout"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="26dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/opensans_bold"
+        android:text="@string/shipping_text"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
-    <androidx.core.widget.NestedScrollView
+    <ImageView
+        android:id="@+id/rectangleLayout"
+        android:layout_width="374dp"
+        android:layout_height="627dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="120dp"
+        android:contentDescription="@string/shipping_layout_shape"
+        android:elevation="3dp"
+        android:src="@drawable/shipping_layout_shape" />
+
+
+    <ImageView
+        android:id="@+id/shippingImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignTop="@+id/rectangleLayout"
+        android:layout_alignEnd="@+id/rectangleLayout"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="175dp"
+        android:contentDescription="@string/shipping_image"
+        android:elevation="12dp"
+        app:srcCompat="@drawable/ic_shipping" />
+
+    <ImageView
+        android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/line"
+        android:elevation="12dp"
+        app:srcCompat="@drawable/shipping_rectangle" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/locationImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="270dp"
+        android:contentDescription="@string/location_image"
+        android:elevation="12dp"
+        app:srcCompat="@drawable/ic_location" />
 
-            <include layout="@navigation/navigation_menu" />
+    <ImageView
+        android:id="@+id/moneyImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="315dp"
+        android:contentDescription="@string/money_image"
+        android:elevation="12dp"
+        app:srcCompat="@drawable/ic_money" />
 
-            <TextView
-                android:id="@+id/shippingTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/rectangleLayout"
-                android:layout_marginTop="85dp"
-                android:elevation="12dp"
-                android:fontFamily="@font/opensans_bold"
-                android:text="@string/shipping_text"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+    <TextView
+        android:id="@+id/tvShipProdTitle"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignEnd="@+id/rectangleLayout"
+        android:layout_alignBottom="@+id/rectangleLayout"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="500dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/opensans_extrabold_italic"
+        android:gravity="center_horizontal"
+        android:text="Product Title"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
 
-            <ImageView
-                android:id="@+id/rectangleLayout"
-                android:layout_width="match_parent"
-                android:layout_height="700dp"
-                android:layout_above="@id/navigation_menu"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="150dp"
-                android:contentDescription="@string/shipping_layout_shape"
-                android:elevation="5dp"
-                android:src="@drawable/shipping_layout_shape" />
-
-            <ImageView
-                android:id="@+id/shippingImg"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignStart="@id/rectangleLayout"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="120dp"
-                android:elevation="12dp"
-                app:srcCompat="@drawable/ic_shipping"
-                android:contentDescription="@string/shipping_image" />
-
-            <ImageView
-                android:id="@+id/line"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="250dp"
-                android:layout_marginEnd="20dp"
-                android:elevation="12dp"
-                app:srcCompat="@drawable/shipping_rectangle"
-                android:contentDescription="@string/line" />
-
-            <ImageView
-                android:id="@+id/locationImg"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignStart="@id/rectangleLayout"
-                android:layout_marginTop="270dp"
-                android:elevation="12dp"
-                app:srcCompat="@drawable/ic_location"
-                android:contentDescription="@string/location_image" />
-
-            <ImageView
-                android:id="@+id/moneyImg"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignStart="@id/rectangleLayout"
-                android:layout_marginTop="315dp"
-                android:elevation="12dp"
-                app:srcCompat="@drawable/ic_money"
-                android:contentDescription="@string/money_image" />
-
-            <ImageView
-                android:id="@+id/backgroundStroke"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="375dp"
-                android:layout_marginEnd="25dp"
-                android:contentDescription="@string/background_stroke"
-                android:elevation="12dp"
-                app:srcCompat="@drawable/shipping_layout_stroke" />
-
-            <ImageView
-                android:id="@+id/callImg"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_alignStart="@id/backgroundStroke"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="390dp"
-                android:elevation="14dp"
-                app:srcCompat="@drawable/ic_call"
-                android:contentDescription="@string/call_image" />
-
-            <ImageView
-                android:id="@+id/emailImg"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_alignStart="@id/backgroundStroke"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="420dp"
-                android:elevation="14dp"
-                app:srcCompat="@drawable/ic_email"
-                android:contentDescription="@string/emailImg" />
-
-            <TextView
-                android:id="@+id/paymentMethodTxtt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/backgroundStroke"
-                android:layout_alignStart="@id/rectangleLayout"
-                android:layout_marginTop="25dp"
-                android:elevation="12dp"
-                android:fontFamily="@font/opensans_bold"
-                android:text="@string/payment_method"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/voucherTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/rectangleLayout"
-                android:layout_marginTop="520dp"
-                android:elevation="12dp"
-                android:fontFamily="@font/opensans_bold"
-                android:text="@string/applied_voucher"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/totalAmountTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/rectangleLayout"
-                android:layout_marginTop="600dp"
-                android:elevation="12dp"
-                android:fontFamily="@font/opensans_bold"
-                android:text="@string/total_amount"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
-
-        </RelativeLayout>
-
-
-    </androidx.core.widget.NestedScrollView>
-
-    <LinearLayout
-        android:id="@+id/shipping_navigation_layout"
+    <ImageView
+        android:id="@+id/backgroundStroke"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="75dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="375dp"
+        android:layout_marginEnd="25dp"
+        android:contentDescription="@string/background_stroke"
+        android:elevation="12dp"
+        app:srcCompat="@drawable/shipping_layout_stroke" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
-            android:layout_gravity="bottom"
-            android:background="@navigation/bottomnavbar_main"
-            android:elevation="9dp"
-            app:itemIconTint="#FFFFFF"
-            app:itemTextColor="#FFFFFF"
-            app:layout_anchor="@+id/fragment_container"
-            app:layout_anchorGravity="bottom|center"
-            app:menu="@menu/bottom_bar" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/callImg"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignStart="@id/backgroundStroke"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="390dp"
+        android:contentDescription="@string/call_image"
+        android:elevation="14dp"
+        app:srcCompat="@drawable/ic_call" />
+
+    <ImageView
+        android:id="@+id/emailImg"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignStart="@id/backgroundStroke"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="420dp"
+        android:contentDescription="@string/emailImg"
+        android:elevation="14dp"
+        app:srcCompat="@drawable/ic_email" />
+
+    <TextView
+        android:id="@+id/tvShipPricetxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignBottom="@+id/rectangleLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="153dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/opensans_bold"
+        android:text="Price"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvShipPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignBottom="@+id/rectangleLayout"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="154dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="0"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvShipQuantxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignBottom="@+id/rectangleLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="122dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/opensans_bold"
+        android:text="Quantity"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvShipQuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignBottom="@+id/rectangleLayout"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="122dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="0"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvShipTotalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignBottom="@+id/rectangleLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="76dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/opensans_bold"
+        android:text="@string/total_amount"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvShipTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/rectangleLayout"
+        android:layout_alignBottom="@+id/rectangleLayout"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="76dp"
+        android:elevation="12dp"
+        android:fontFamily="@font/opensans_bold"
+        android:text="₱0.00"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+
+</RelativeLayout>
 
 
-</androidx.drawerlayout.widget.DrawerLayout>

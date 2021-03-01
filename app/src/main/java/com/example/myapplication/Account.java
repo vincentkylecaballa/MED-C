@@ -9,14 +9,12 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class AddToCart extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener  {
-
+public class Account extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     private BottomNavigationView bottomNavigationView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_to_cart);
+        setContentView(R.layout.activity_account);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_navigation);
@@ -32,7 +30,7 @@ public class AddToCart extends AppCompatActivity implements BottomNavigationView
                 overridePendingTransition(0, 0);
             } else if (itemId == R.id.addtoCart) {
                 startActivity(new Intent(this, AddToCart.class));
-                overridePendingTransition(0, 0 );
+                overridePendingTransition(0, 0);
             } else if (itemId == R.id.shipping) {
                 startActivity(new Intent(this, Account.class));
                 overridePendingTransition(0, 0);

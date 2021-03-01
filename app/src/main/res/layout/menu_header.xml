@@ -19,7 +19,7 @@
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:textColor="#000000"
-        android:fontFamily="@font/opensans_bold"/>
+        android:fontFamily="@font/opensans_bold" />
 
     <TextView
         android:layout_width="match_parent"
@@ -28,6 +28,6 @@
         android:fontFamily="@font/open_sans_light"
         android:gravity="center"
         android:textColor="#000000"
-        android:text="MED-C Premium"/>
+        android:text="@string/med_c_premium" />
 
 </LinearLayout>

@@ -10,13 +10,12 @@
     android:orientation="vertical"
     tools:openDrawer="start">
 
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_menu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@navigation/menu_header"
+        app:headerLayout="@layout/menu_header"
         app:menu="@menu/main_menu" />
 
     <androidx.core.widget.NestedScrollView
@@ -48,6 +47,17 @@
                 android:inputType="textPersonName"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
+
+            <ImageView
+                android:id="@+id/micButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignEnd="@id/searchBar"
+                android:layout_marginTop="110dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/micButton"
+                android:elevation="10dp"
+                app:srcCompat="@drawable/ic_mic" />
 
             <ImageView
                 android:id="@+id/medImage"
@@ -86,7 +96,7 @@
                 android:orientation="vertical"
                 android:scrollbars="vertical" />
 
-            <include layout="@navigation/navigation_menu"/>
+            <include layout="@layout/navigation_menu"/>
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -100,22 +110,11 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_gravity="bottom"
-            android:background="@navigation/bottomnavbar_main"
+            android:background="@drawable/bottomnavbar_main"
             android:elevation="9dp"
             app:itemIconTint="#FFFFFF"
             app:itemTextColor="#FFFFFF"
-            app:menu="@menu/bottom_bar" >
-
-            <ImageView
-                android:id="@+id/micButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="110dp"
-                android:layout_marginEnd="10dp"
-                android:contentDescription="@string/micButton"
-                android:elevation="10dp"
-                app:srcCompat="@drawable/ic_mic" />
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+            app:menu="@menu/bottom_bar" />
 
     </LinearLayout>
 

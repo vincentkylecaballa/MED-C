@@ -80,14 +80,14 @@
 
     <TextView
         android:id="@+id/tvProdDes"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="375dp"
         android:fontFamily="@font/open_sans_light"
         android:text="@string/description"
-        android:textSize="11dp"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="11dp" />
 
     <ImageView
         android:id="@+id/heartImg"
@@ -128,13 +128,27 @@
         android:clickable="false"
         android:editable="false"
         android:ems="10"
+        android:enabled="false"
         android:fontFamily="@font/opensans_bold"
         android:gravity="center_horizontal|fill_vertical"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:text="1"
         android:textAlignment="gravity"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvProdQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/etProdQuan"
+        android:layout_alignBottom="@+id/etProdQuan"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="3dp"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="17dp"
+        android:text="1"
+        android:textColor="@android:color/black" />
 
     <RatingBar
         android:id="@+id/productRating"

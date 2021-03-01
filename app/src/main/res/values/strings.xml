@@ -70,6 +70,17 @@
     <string name="buy">BUY</string>
     <string name="minus_button">minus_button</string>
     <string name="plus_button">plus button</string>
+    <string name="proceed">Proceed</string>
+    <string name="account">ACCOUNT</string>
+    <string name="account_background">account_background</string>
+    <string name="med_c_premium">MED-C Premium</string>
+    <string name="my_profile">My Profile</string>
+    <string name="profile_location_image">profile_location_image</string>
+    <string name="address">Address</string>
+    <string name="loyalty_program">Loyalty Program</string>
+    <string name="my_bag">My Bag</string>
+    <string name="checkout">CHECKOUT</string>
+    <string name="total_amount">Total Amount</string>
 
 
 </resources>

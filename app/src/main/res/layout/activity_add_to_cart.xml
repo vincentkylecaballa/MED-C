@@ -6,55 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".AddToCart">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@navigation/menu_header"
-        app:menu="@menu/main_menu" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <include layout="@navigation/navigation_menu"/>
-
-        <ImageView
-            android:id="@+id/rectangleLayout"
-            android:layout_width="match_parent"
-            android:layout_height="700dp"
-            android:layout_above="@id/navigation_menu"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="150dp"
-            android:contentDescription="@string/shipping_layout_shape"
-            android:elevation="5dp"
-            android:src="@drawable/shipping_layout_shape" />
-
-        <ImageView
-            android:id="@+id/shoppingImg"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignStart="@id/rectangleLayout"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="90dp"
-            android:elevation="12dp"
-            app:srcCompat="@drawable/ic_shopping_bag"
-            android:contentDescription="@string/shopping_bag" />
 
         <TextView
             android:id="@+id/orderTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@id/shoppingImg"
-            android:layout_marginTop="92dp"
-            android:layout_marginEnd="-80dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="20dp"
             android:elevation="12dp"
             android:fontFamily="@font/opensans_bold"
-            android:text="@string/order"
+            android:text="@string/my_bag"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="32sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_bag_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_below="@+id/orderTxt"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/total_amount_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/my_bag_recycler_view"
+            android:layout_marginStart="20dp"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/opensans_bold"
+            android:layout_marginTop="15dp"
+            android:text="@string/total_amount" />
+
+        <Button
+            android:id="@+id/checkout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/checkout"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_below="@+id/total_amount_txt"
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white"/>
 
 
     </RelativeLayout>
@@ -68,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_gravity="bottom"
-            android:background="@navigation/bottomnavbar_main"
+            android:background="@drawable/bottomnavbar_main"
             android:elevation="9dp"
             app:itemIconTint="#FFFFFF"
             app:itemTextColor="#FFFFFF"

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".product_details"></activity>
+        <activity android:name=".Account"></activity>
+        <activity android:name=".product_details" />
         <activity android:name=".Shipping" />
         <activity android:name=".AddToCart" />
         <activity android:name=".Register" />

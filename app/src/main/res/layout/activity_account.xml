@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Account">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:contentDescription="@string/account_background"
+        app:srcCompat="@drawable/profile_background" />
+
+    <ImageView
+        android:id="@+id/settingsBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="365dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/ic_settings" />
+
+    <TextView
+        android:id="@+id/profile_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="360dp"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/profile_address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="450dp"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/profile_tier_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loyalty_program"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="550dp"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:src="@android:color/white" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="200dp"
+        android:layout_height="190dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp"
+        android:src="@drawable/cyrus_sample" />
+
+    <TextView
+        android:id="@+id/my_profile_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/opensans_bold"
+        android:text="@string/my_profile"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/pencil_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="280dp"
+        app:srcCompat="@drawable/ic_pencil" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottomnavbar_main"
+            android:elevation="9dp"
+            app:itemIconTint="#FFFFFF"
+            app:itemTextColor="#FFFFFF"
+            app:menu="@menu/bottom_bar" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,68 +1,83 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Shipping extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+import org.w3c.dom.Text;
 
-    private BottomNavigationView bottomNavigationView;
-    private DrawerLayout drawerLayout;
-    private ImageView menu;
+public class Shipping extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView tvShipProdTitle, tvShipPrice, tvShipQuan, tvShipTotal;
+    private Button btnProceed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shipping);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-        menu = findViewById(R.id.navImage);
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationMenu();
+        tvShipProdTitle = (TextView) findViewById(R.id.tvShipProdTitle);
+        tvShipPrice = (TextView) findViewById(R.id.tvShipPrice);
+        tvShipQuan = (TextView) findViewById(R.id.tvShipQuan);
+        tvShipTotal = (TextView) findViewById(R.id.tvShipTotal);
+        btnProceed = (Button) findViewById(R.id.btnProceed);
+
+        setTvShipPrice(tvShipPrice);
+        setTvShipProdTitle(tvShipProdTitle);
+        setTvShipQuan(tvShipQuan);
+        setTvShipTotal(tvShipTotal);
+
+
+        btnProceed.setOnClickListener(this);
+
     }
 
-    private void navigationMenu() {
-        menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.openDrawer(GravityCompat.START);
-                } else {
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                }
-            }
-        });
-    }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        bottomNavigationView.postDelayed(() -> {
-            int itemId = menuItem.getItemId();
-            if (itemId == R.id.home) {
-                startActivity(new Intent(this, Homepage.class));
-                overridePendingTransition(0, 0);
-            } else if (itemId == R.id.addtoCart) {
-                startActivity(new Intent(this, AddToCart.class));
-                overridePendingTransition(0, 0);
-            } else if (itemId == R.id.shipping) {
-                startActivity(new Intent(this, Shipping.class));
-                overridePendingTransition(0, 0);
-            }
-            finish();
-        }, 300);
-        return true;
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnProceed:
+                Intent intent = new Intent(getApplicationContext(), AddToCart.class);
+                startActivity(intent);
+                break;
+        }
     }
+
+    public void setTvShipPrice(TextView tvShipPrice) {
+        String strTvShipPrice = getIntent().getStringExtra("prodShipPrice");
+        tvShipPrice.setText(strTvShipPrice);
+
+    }
+
+    public void setTvShipQuan(TextView tvShipQuan) {
+        String strTvShipQuan = getIntent().getStringExtra("prodShipQuan");
+        tvShipQuan.setText(strTvShipQuan);
+    }
+
+    public void setTvShipProdTitle(TextView tvShipProdTitle) {
+        String strTvShipProdTitle = getIntent().getStringExtra("prodShipProdName");
+        tvShipProdTitle.setText(strTvShipProdTitle);
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void setTvShipTotal(TextView tvShipTotal) {
+        String strTvShipTotal = this.tvShipPrice.getText().toString().substring(1);
+        double doubleTvShipPrice= Double.parseDouble(strTvShipTotal);
+        double doubleTvQuan = Double.parseDouble(this.tvShipQuan.getText().toString().trim());
+        double doubleTvTotal = doubleTvShipPrice * doubleTvQuan;
+        tvShipTotal.setText("₱" + doubleTvTotal);
+    }
+
+
 }

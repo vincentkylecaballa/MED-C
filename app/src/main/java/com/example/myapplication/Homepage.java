@@ -81,7 +81,7 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
                 startActivity(new Intent(this, AddToCart.class));
                 overridePendingTransition(0, 0);
             } else if (itemId == R.id.shipping) {
-                startActivity(new Intent(this, Shipping.class));
+                startActivity(new Intent(this, Account.class));
                 overridePendingTransition(0, 0);
             }
             finish();
@@ -108,8 +108,6 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
         ProductsView.setHasFixedSize(true);
         ProductsView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-
-
         featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
                 "Heng De Face Shield", "Comes with individual box packaging. Plastic film for the acetate is " +
                 "included to prevent scratches. ", "₱10.00"));
@@ -119,9 +117,8 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
         featuredLocation.add(new FeaturedHelper(R.drawable.hengde_faceshield2, R.drawable.ic_baseline_add_shopping_cart,
                 "Heng De Face Shield", "Check 2 " +
                 "included to prevent scratches. ", "₱10.00"));
-
-        adapter = new FeaturedAdapter(featuredLocation,listener);
         setOnClickListener();
+        adapter = new FeaturedAdapter(featuredLocation,listener);
         ProductsView.setAdapter(adapter);
 
     }
@@ -130,7 +127,7 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
         listener = new FeaturedAdapter.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
-                Intent intent =new Intent(Homepage.this, product_details.class);
+                Intent intent =new Intent(getApplicationContext(), product_details.class);
                 intent.putExtra("productPic", featuredLocation.get(position).getImg());
                 intent.putExtra("productName",featuredLocation.get(position).getTitle());
                 intent.putExtra("description", featuredLocation.get(position).getDesc());

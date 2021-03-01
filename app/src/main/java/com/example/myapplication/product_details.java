@@ -9,60 +9,60 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class product_details extends AppCompatActivity implements View.OnClickListener {
-    TextView tvProdName,tvProdPrice,tvProdDes;
-    ImageView ivPlus,ivMinus, ivProductPic;
+    TextView tvProdName, tvProdPrice, tvProdDes, tvProdQuantity;
+    ImageView ivPlus, ivMinus, ivProductPic;
     EditText etProdQuan;
     Button btnProdDesBuy;
+    int quantity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
 
-        btnProdDesBuy = (Button)findViewById(R.id.btnProdDesBuy);
-        tvProdName = (TextView)findViewById(R.id.tvProdName);
-        tvProdPrice = (TextView)findViewById(R.id.tvProdPrice);
-        tvProdDes = (TextView)findViewById(R.id.tvProdDes);
-        ivPlus = (ImageView)findViewById(R.id.ivPlus);
-        ivMinus = (ImageView)findViewById(R.id.ivMinus);
-        ivProductPic = (ImageView)findViewById(R.id.ivProductPic);
-        etProdQuan = (EditText)findViewById(R.id.etProdQuan);
-
+        btnProdDesBuy = (Button) findViewById(R.id.btnProdDesBuy);
+        tvProdName = (TextView) findViewById(R.id.tvProdName);
+        tvProdPrice = (TextView) findViewById(R.id.tvProdPrice);
+        tvProdDes = (TextView) findViewById(R.id.tvProdDes);
+        tvProdQuantity = (TextView) findViewById(R.id.tvProdQuantity);
+        ivPlus = (ImageView) findViewById(R.id.ivPlus);
+        ivMinus = (ImageView) findViewById(R.id.ivMinus);
+        ivProductPic = (ImageView) findViewById(R.id.ivProductPic);
+        etProdQuan = (EditText) findViewById(R.id.etProdQuan);
 
         prodPicUpdate(ivProductPic);
         prodNameUpdate(tvProdName);
         prodPriceUpdate(tvProdPrice);
         prodDesUpdate(tvProdDes);
+
+        btnProdDesBuy.setOnClickListener(this);
+        ivPlus.setOnClickListener(this);
+        ivMinus.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        String strQuan = etProdQuan.toString().trim();
-        int intQuan = Integer.parseInt(strQuan);
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.ivPlus:
-                try {
-                    intQuan++;
-                    strQuan = Integer.toString(intQuan);
-                    this.etProdQuan.setText(strQuan);
-                }catch (Exception e){
-                }
+                quantity++;
+                displayQuan();
                 break;
             case R.id.ivMinus:
-                try {
-                    if (intQuan <= 1){
-                        intQuan = 1;
-                        strQuan = Integer.toString(intQuan);
-                        this.etProdQuan.setText(strQuan);
-                    }else{
-                        intQuan--;
-                    }
-                }catch (Exception e){
+                if (quantity < 1) {
+                    Toast.makeText(product_details.this, "Can't decrease less than 1", Toast.LENGTH_SHORT).show();
+                } else {
+                   --quantity;
+                    displayQuan();
                 }
                 break;
             case R.id.btnProdDesBuy:
-                Intent intent =new Intent(product_details.this, Shipping.class);
+                Intent intent = new Intent(this, Shipping.class);
+                intent.putExtra("prodShipPrice", tvProdPrice.getText().toString());
+                intent.putExtra("prodShipQuan", tvProdQuantity.getText().toString());
+                intent.putExtra("prodShipProdName", tvProdName.getText().toString().trim());
                 startActivity(intent);
                 break;
             default:
@@ -70,21 +70,28 @@ public class product_details extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    private void displayQuan() {
+        tvProdQuantity.setText(String.valueOf(quantity));
+    }
+
     public void prodPicUpdate(ImageView ivProductPic) {
         Bundle bundle = getIntent().getExtras();
         int res_image = bundle.getInt("productPic");
         ivProductPic.setImageResource(res_image);
     }
+
     public void prodNameUpdate(TextView tvProdName) {
         String strProdName = getIntent().getStringExtra("productName");
         tvProdName.setText(strProdName);
     }
+
     public void prodPriceUpdate(TextView tvProdPrice) {
-        String strProdPrice = getIntent().getStringExtra("productName");
+        String strProdPrice = getIntent().getStringExtra("productPrice");
         tvProdPrice.setText(strProdPrice);
     }
+
     public void prodDesUpdate(TextView tvProdDes) {
-        String strProdDes = getIntent().getStringExtra("productPrice");
+        String strProdDes = getIntent().getStringExtra("description");
         tvProdDes.setText(strProdDes);
     }
 }
