@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/addtoCart"
-        android:title="@string/cart"
+        android:title="@string/orders"
         android:icon="@drawable/ic_shopping_cart"/>
 
     <item

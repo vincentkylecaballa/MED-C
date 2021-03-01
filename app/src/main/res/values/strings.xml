@@ -81,6 +81,8 @@
     <string name="my_bag">My Bag</string>
     <string name="checkout">CHECKOUT</string>
     <string name="total_amount">Total Amount</string>
+    <string name="my_orders">My Orders</string>
+    <string name="orders">ORDERS</string>
 
 
 </resources>
