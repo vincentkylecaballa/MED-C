@@ -40,7 +40,7 @@
     <ImageView
         android:id="@+id/rectangleLayout"
         android:layout_width="374dp"
-        android:layout_height="627dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -100,6 +100,22 @@
         app:srcCompat="@drawable/ic_money" />
 
     <TextView
+        android:id="@+id/tvBuyersName"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/rectangleLayout"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="319dp"
+        android:layout_marginEnd="33dp"
+        android:layout_toEndOf="@+id/moneyImg"
+        android:elevation="12dp"
+        android:fontFamily="@font/opensans_bold"
+        android:text="Buyer's Name"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <TextView
         android:id="@+id/tvShipProdTitle"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
@@ -127,6 +143,22 @@
         android:contentDescription="@string/background_stroke"
         android:elevation="12dp"
         app:srcCompat="@drawable/shipping_layout_stroke" />
+
+    <TextView
+        android:id="@+id/tvBuyersEmail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/rectangleLayout"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="417dp"
+        android:layout_marginEnd="34dp"
+        android:layout_toEndOf="@+id/emailImg"
+        android:elevation="12dp"
+        android:fontFamily="@font/opensans_bold"
+        android:text="Email"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
 
     <ImageView
         android:id="@+id/callImg"

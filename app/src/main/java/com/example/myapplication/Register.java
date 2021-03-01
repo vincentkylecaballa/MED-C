@@ -107,7 +107,7 @@ public class Register extends AppCompatActivity  implements View.OnClickListener
                     if (password.equals(confirmPassword) && registration()){
                         Boolean checkUser = db.checkUsername(emailAddress);
                         if (checkUser == false){
-                            Boolean insertData =  db.insertData(emailAddress, password);
+                            Boolean insertData =  db.insertUser(emailAddress, fullName ,password);
                             if (insertData == true){
                                 Toast.makeText(Register.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Register.this, Homepage.class));

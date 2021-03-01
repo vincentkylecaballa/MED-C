@@ -23,14 +23,14 @@
             android:textSize="32sp" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/my_bag_recycler_view"
+            android:id="@+id/orderView"
             android:layout_width="match_parent"
             android:layout_height="600dp"
             android:layout_below="@+id/orderTxt"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp" />
-        
+
     </RelativeLayout>
 
     <LinearLayout

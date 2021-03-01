@@ -60,6 +60,9 @@ public class product_details extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.btnProdDesBuy:
                 Intent intent = new Intent(this, Shipping.class);
+                Bundle bundle = getIntent().getExtras();
+                int res_image = bundle.getInt("productPic");
+                intent.putExtra("prodShipPic", res_image);
                 intent.putExtra("prodShipPrice", tvProdPrice.getText().toString());
                 intent.putExtra("prodShipQuan", tvProdQuantity.getText().toString());
                 intent.putExtra("prodShipProdName", tvProdName.getText().toString().trim());
