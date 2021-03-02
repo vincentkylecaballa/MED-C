@@ -84,12 +84,38 @@
             android:id="@+id/emailAddress_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:hint="@string/shipping_address"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/home_address_reg"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:theme="@style/TextLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailAddress_reg">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/home_address_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/email_address"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fullName_reg"
@@ -122,13 +148,13 @@
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:theme="@style/TextLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailAddress_reg"
+        app:layout_constraintTop_toBottomOf="@+id/home_address_reg"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -149,7 +175,7 @@
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:theme="@style/TextLabel"
         app:layout_constraintEnd_toEndOf="parent"

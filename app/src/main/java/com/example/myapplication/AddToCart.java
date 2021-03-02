@@ -28,17 +28,24 @@ public class AddToCart extends AppCompatActivity implements BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-//
-//        ordersView = findViewById(R.id.orderView);
-//
-//        ordersView.setHasFixedSize(true);
-//        ordersView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-//
-//        listOfOrders.add(new OrderModel(R.drawable.hengde_faceshield2, "Heng De Face Shield", "100",
-//                "10"));
-//
-//        ordersAdapter = new OrderAdapter(listOfOrders);
-//        ordersView.setAdapter(ordersAdapter);
+        listOfOrders = new ArrayList<>(); // declaration of arraylist
+
+        ordersView = findViewById(R.id.orderView);
+
+        ordersView.setHasFixedSize(true);
+        ordersView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        listOfOrders.add(new OrderModel(R.drawable.hengde_faceshield2, "Heng De Face Shield", "100",
+                "10"));
+        listOfOrders.add(new OrderModel(R.drawable.hengde_faceshield2, "Heng De Face Shield", "100",
+                "10"));
+        listOfOrders.add(new OrderModel(R.drawable.hengde_faceshield2, "Heng De Face Shield", "100",
+                "10"));
+        listOfOrders.add(new OrderModel(R.drawable.hengde_faceshield2, "Heng De Face Shield", "100",
+                "10"));
+
+        ordersAdapter = new OrderAdapter(listOfOrders);
+        ordersView.setAdapter(ordersAdapter);
     }
 
     @Override

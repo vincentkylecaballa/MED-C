@@ -15,31 +15,17 @@ public class OrderModel {
         return orderImg;
     }
 
-    public void setOrderImg(int orderImg) {
-        this.orderImg = orderImg;
-    }
-
     public String getOrderName() {
         return orderName;
-    }
-
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
     }
 
     public String getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
     public String getQuan() {
         return quan;
     }
 
-    public void setQuan(String quan) {
-        this.quan = quan;
-    }
+
 }

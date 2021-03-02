@@ -1,6 +1,5 @@
 package com.example.myapplication.helperClasses.homeAdapter;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 
-
 import java.util.ArrayList;
 
 public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.AdapterViewHolder> {
-    
+
     ArrayList<FeaturedHelper> featuredLocations;
 
     RecyclerViewClickListener listener;
@@ -27,6 +25,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Adapte
         this.featuredLocations = featuredLocations;
         this.listener = listener;
     }
+
     @NonNull
     @Override
     public AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -53,11 +52,11 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Adapte
         return featuredLocations.size();
     }
 
-    public interface RecyclerViewClickListener{
-        void onClick(View v,int position);
+    public interface RecyclerViewClickListener {
+        void onClick(View v, int position);
     }
 
-    public class AdapterViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
+    public class AdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView image, addtocart;
         TextView title, description, price;

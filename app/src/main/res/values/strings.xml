@@ -82,6 +82,13 @@
     <string name="checkout">CHECKOUT</string>
     <string name="my_orders">My Orders</string>
     <string name="orders">ORDERS</string>
+    <string name="shipping">SHIPPING</string>
+    <string name="cyrus_rj_robles">Cyrus RJ Robles</string>
+    <string name="tier">MedC Premium</string>
+    <string name="manila_address">551 M.F. Jhocson St., Sampaloc, Manila</string>
+    <string name="log_out">log_out</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="cyrus_email_address">cyrusrobles420@gmail.com</string>
 
 
 </resources>
