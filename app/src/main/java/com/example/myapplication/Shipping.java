@@ -10,13 +10,8 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.w3c.dom.Text;
 
 public class Shipping extends AppCompatActivity implements View.OnClickListener {
 
@@ -92,7 +87,7 @@ public class Shipping extends AppCompatActivity implements View.OnClickListener 
 //                }else{
 //                    Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
 //                }
-                Intent intent = new Intent(getApplicationContext(), AddToCart.class);
+                Intent intent = new Intent(getApplicationContext(), Orders.class);
 //                intent.putExtra("buyersName", strBuyersName);
                 startActivity(intent);
                 break;

@@ -10,11 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText etEmail, etPass;
+    private TextInputLayout etEmail, etPass;
     private EditText etEmail_LogIn, etPass_LogIn;
     private Button regbutton;
     private Button loginbutton;
+
     DatabaseHelper db;
 
     @Override
@@ -25,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         etEmail_LogIn = findViewById(R.id.etEmail_LogIn);
         etPass_LogIn = findViewById(R.id.etPass_LogIn);
+
+        etEmail = findViewById(R.id.etEmail);
+        etPass = findViewById(R.id.etPass);
 
         regbutton = findViewById(R.id.registerBtn);
         regbutton.setOnClickListener(this);
@@ -75,25 +81,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String pass = etPass_LogIn.getText().toString().trim();
                 if (email.equals("") || pass.equals("")) {
                     if (email.isEmpty()) {
-                        etEmail_LogIn.setError("Please enter your email");
-                        etEmail_LogIn.requestFocus();
+                        etEmail.setError("Please enter your email");
+                        etEmail.setErrorEnabled(true);
                     }
                     if (pass.isEmpty()) {
-                        etPass_LogIn.setError("Please enter your password");
-                        etPass_LogIn.requestFocus();
+                        etPass.setError("Please enter your password");
+                        etEmail.setErrorEnabled(true);
                     }
                     if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                        etEmail_LogIn.setError("Please provide valid email");
-                        etEmail_LogIn.requestFocus();
-
+                        etEmail.setError("Please provide valid email");
+                        etEmail.setErrorEnabled(true);
                     }
                 } else {
-                    Boolean checkUserPass = db.checkUsernamePassword(email,pass);
-                    if (checkUserPass == true){
+                    Boolean checkUserPass = db.checkUsernamePassword(email, pass);
+                    if (checkUserPass == true) {
                         Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MainActivity.this, Homepage.class));
-                    }else {
-                        Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    } else {
+                       etPass.setError("Invalid Email or Password");
+                       etEmail.setError("");
+                       etEmail.setErrorEnabled(true);
                     }
 
                 }

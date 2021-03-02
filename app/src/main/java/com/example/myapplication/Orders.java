@@ -9,22 +9,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.myapplication.helperClasses.homeAdapter.OrderAdapter;
-import com.example.myapplication.helperClasses.homeAdapter.OrderModel;
+import com.example.myapplication.helperClasses.orderClasses.OrderAdapter;
+import com.example.myapplication.helperClasses.orderClasses.OrderModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class AddToCart extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener  {
+public class Orders extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView bottomNavigationView;
     ArrayList<OrderModel> listOfOrders;
     RecyclerView ordersView;
     RecyclerView.Adapter ordersAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_to_cart);
+        setContentView(R.layout.activity_orders);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
@@ -55,10 +56,10 @@ public class AddToCart extends AppCompatActivity implements BottomNavigationView
             if (itemId == R.id.home) {
                 startActivity(new Intent(this, Homepage.class));
                 overridePendingTransition(0, 0);
-            } else if (itemId == R.id.addtoCart) {
-                startActivity(new Intent(this, AddToCart.class));
-                overridePendingTransition(0, 0 );
-            } else if (itemId == R.id.shipping) {
+            } else if (itemId == R.id.orders) {
+                startActivity(new Intent(this, Orders.class));
+                overridePendingTransition(0, 0);
+            } else if (itemId == R.id.account) {
                 startActivity(new Intent(this, Account.class));
                 overridePendingTransition(0, 0);
             }

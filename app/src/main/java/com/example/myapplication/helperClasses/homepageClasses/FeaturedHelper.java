@@ -1,4 +1,4 @@
-package com.example.myapplication.helperClasses.homeAdapter;
+package com.example.myapplication.helperClasses.homepageClasses;
 
 public class FeaturedHelper {
 

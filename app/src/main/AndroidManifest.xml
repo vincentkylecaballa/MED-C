@@ -15,7 +15,7 @@
         <activity android:name=".Account"></activity>
         <activity android:name=".product_details" />
         <activity android:name=".Shipping" />
-        <activity android:name=".AddToCart" />
+        <activity android:name=".Orders" />
         <activity android:name=".Register" />
         <activity android:name=".SplashScreen">
             <intent-filter>

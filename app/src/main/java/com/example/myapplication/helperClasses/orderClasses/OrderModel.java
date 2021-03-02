@@ -1,4 +1,4 @@
-package com.example.myapplication.helperClasses.homeAdapter;
+package com.example.myapplication.helperClasses.orderClasses;
 
 public class OrderModel {
     int orderImg;

@@ -1,6 +1,5 @@
-package com.example.myapplication.helperClasses.homeAdapter;
+package com.example.myapplication.helperClasses.orderClasses;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

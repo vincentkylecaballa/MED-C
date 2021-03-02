@@ -15,12 +15,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.helperClasses.homeAdapter.FeaturedAdapter;
-import com.example.myapplication.helperClasses.homeAdapter.FeaturedHelper;
+import com.example.myapplication.helperClasses.homepageClasses.FeaturedAdapter;
+import com.example.myapplication.helperClasses.homepageClasses.FeaturedHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -58,10 +57,6 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
         ProductsView = findViewById(R.id.productsView);
         ProductsView();
 
-        menu = findViewById(R.id.navImage);
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationMenu();
-
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
@@ -77,10 +72,10 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
             if (itemId == R.id.home) {
                 startActivity(new Intent(this, Homepage.class));
                 overridePendingTransition(0, 0);
-            } else if (itemId == R.id.addtoCart) {
-                startActivity(new Intent(this, AddToCart.class));
+            } else if (itemId == R.id.orders) {
+                startActivity(new Intent(this, Orders.class));
                 overridePendingTransition(0, 0);
-            } else if (itemId == R.id.shipping) {
+            } else if (itemId == R.id.account) {
                 startActivity(new Intent(this, Account.class));
                 overridePendingTransition(0, 0);
             }
@@ -88,20 +83,6 @@ public class Homepage extends AppCompatActivity implements BottomNavigationView.
         }, 300);
         return true;
     }
-
-    private void navigationMenu() {
-        menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.openDrawer(GravityCompat.START);
-                } else {
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                }
-            }
-        });
-    }
-
 
     private void ProductsView() {
 

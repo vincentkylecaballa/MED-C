@@ -28,10 +28,10 @@ public class Account extends AppCompatActivity implements BottomNavigationView.O
             if (itemId == R.id.home) {
                 startActivity(new Intent(this, Homepage.class));
                 overridePendingTransition(0, 0);
-            } else if (itemId == R.id.addtoCart) {
-                startActivity(new Intent(this, AddToCart.class));
+            } else if (itemId == R.id.orders) {
+                startActivity(new Intent(this, Orders.class));
                 overridePendingTransition(0, 0);
-            } else if (itemId == R.id.shipping) {
+            } else if (itemId == R.id.account) {
                 startActivity(new Intent(this, Account.class));
                 overridePendingTransition(0, 0);
             }
